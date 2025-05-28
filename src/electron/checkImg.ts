@@ -18,14 +18,15 @@ async function recognizeText(imagePath: string) {
         const regexName = /戶 名 : (.+)/;
         const matchName = dataText.match(regexName);
 
-        const stamp = matchName ? matchName[1].replaceAll(' ', '') : getDateStamp();
+        const stamp = getDateStamp();
+        const name = matchName ? matchName[1].replaceAll(' ', '')+ `_${stamp}` : stamp;
 
         if (matchNumber) {
             // console.log("找到匹配:", matchNumber[1]);
-            return `${matchNumber[1]}_${stamp}`;
+            return `${matchNumber[1]}_${name}`;
         } else {
             // console.log("未找到匹配");
-            return `${stamp}`;
+            return undefined;
         }
     } catch (error) {
         console.error('識別文字時出錯:', error);
