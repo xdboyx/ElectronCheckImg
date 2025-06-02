@@ -1,5 +1,7 @@
 # ElectronCheckImg
 
+![示意圖片](image.png)
+
 一個基於 Electron、React、TypeScript、Vite 與 Tesseract.js 的桌面應用程式，可批次辨識資料夾內所有圖片的文字，並依辨識結果自動分類、重新命名或複製到對應資料夾。支援 AI 輔助辨識（Gemini API）。
 
 ## 功能特色
